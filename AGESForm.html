@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <style>
+    /* Global Styles */
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+body {
+    background: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Form Container */
+form {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.08);
+    max-width: 600px;
+    width: 100%;
+    text-align: left;
+    transition: 0.3s ease-in-out;
+}
+
+form:hover {
+    transform: scale(1.02);
+}
+
+/* Logo */
+form img {
+    display: block;
+    margin: 0 auto;
+    width: 120px;
+}
+
+/* Divider */
+hr {
+    border: none;
+    height: 2px;
+    background: #e0e0e0;
+    margin: 20px 0;
+}
+
+/* Labels */
+.AG {
+    font-weight: 600;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+/* Input Fields */
+.input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    background: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+.input:focus, select:focus, textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+/* Section Headings */
+h3 {
+    font-size: 20px;
+    color: #333;
+    border-bottom: 3px solid #007bff;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* Radio Button Container */
+.radio-group {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+/* Align radio buttons to the left */
+.radio-group input {
+    margin-right: 10px;
+    accent-color: #007bff;
+    transform: scale(1.2);
+}
+
+/* Ensure all radio buttons align left */
+input[type="radio"] {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Options Container */
+div[id$="Options"] {
+    display: none;
+    background: #f8f8f8;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border-left: 5px solid #007bff;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Section Titles */
+h4 {
+    font-size: 18px;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+/* Submit Button */
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+    box-shadow: 0px 5px 15px rgba(0, 123, 255, 0.2);
+}
+
+/* ✅ Mobile Responsive Styles */
+@media (max-width: 768px) {
+    form {
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    .input, select, textarea {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    h4 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    form {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    form img {
+        width: 100px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    h4 {
+        font-size: 14px;
+    }
+
+    .input, select, textarea {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .radio-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .radio-group input {
+        margin-bottom: 5px;
+    }
+}
+
+ </style>
+
+</head>
+<body>
+   <form action="https://api.web3forms.com/submit" method="POST"> 
+    <input type="hidden" name="apikey" value="39c12d60-247f-446c-a745-a75aa5df3200">
+    <div>
+        <center>
+        <img src="Assests/Image/AgesLogo-removebg-preview.png" alt="" width="200">
+    </center>
+        <hr>
+    </div>
+    
+        <label  class="AG" > Company Name</label>
+        <input class="input" name="Companyname" placeholder="Enter Here" >
+        <br>
+        <br>
+        <label class="AG" > Customer Name</label>
+        <input class="input" placeholder="Enter Here" name="customer-name" >
+        <br>
+        <br>
+        <label class="AG" > Contact Number </label>
+        <input class="input" type="number" name="contact-number" >
+        <br>
+        <br><label class="AG" > Email Address </label>
+        <input class="input"  type="email" name="email address" >
+    
+        <h3>Select options</h3>
+        <div id="optionsContainer">
+            <!-- Linear Lights -->
+            <input type="radio" name="Select" id="option1">
+            <label for="option1">Linear Lights</label>
+            <br>
+            <div id="linearLightsOptions" style="display: none; margin-top: 5px;">
+                <h4>Linear Lights Options</h4>
+                <label>Shape of Light:</label>
+                <input type="text" name="linear_shape" placeholder="Enter shape">
+                <br>
+                <label>Material of Lights:</label>
+                <select name="linear_material">
+                    <option value="aluminium">Aluminium</option>
+                    <option value="ms">MS</option>
+                </select>
+                <br>
+                <label>Length:</label>
+                <input type="text" name="linear_length" placeholder="Enter length">
+                <br>
+                <label>Dimensions (LxB):</label>
+                <input type="text" name="linear_dimensions" placeholder="Enter dimensions">
+            </div>
+        
+            <!-- Earthing Solution -->
+            <input type="radio" name="Select" id="option2">
+            <label for="option2">Earthing Solution</label>
+            <br>
+            <div id="earthingOptions" style="display: none; margin-top: 5px;">
+                <h4>Earthing Solution Options</h4>
+                <label>Bore Depth:</label>
+                <input type="text" name="earthing_bore_depth" placeholder="Enter bore depth">
+                <br>
+                <label>Conductor Type:</label>
+                <select name="earthing_conductor">
+                    <option value="copper">Copper</option>
+                    <option value="importedCopperCladded">Imported Copper Cladded</option>
+                </select>
+                <br>
+                <label>Bare Copper Size:</label>
+                <input type="text" name="earthing_copper_size" placeholder="Enter size in sqmm">
+                <br>
+                <label>Earthing Chamber:</label>
+                <select name="earthing_chamber">
+                    <option value="rccLocal">RCC Local</option>
+                    <option value="rccImported">RCC Imported</option>
+                </select>
+                <br>
+                <label>ECP:</label>
+                <select name="earthing_ecp">
+                    <option value="withBox">With Box</option>
+                    <option value="withoutBox">Without Box</option>
+                </select>
+                <br>
+                <label>Location of Bore:</label>
+                <input type="text" name="earthing_location" placeholder="Mention location">
+            </div>
+        
+            <!-- UPS -->
+            <input type="radio" name="Select" id="option3">
+            <label for="option3">UPS</label>
+            <br>
+            <div id="upsOptions" style="display: none; margin-top: 5px;">
+                <h4>UPS Options</h4>
+                <label>Rating of UPS:</label>
+                <input type="text" name="ups_rating" placeholder="Enter rating in kVA">
+                <br>
+                <label>Phase:</label>
+                <select name="ups_phase">
+                    <option value="single">Single Phase</option>
+                    <option value="three">Three Phase</option>
+                </select>
+                <br>
+                <label>Usage of UPS:</label>
+                <textarea name="ups_usage" placeholder="Mention usage"></textarea>
+            </div>
+        
+            <!-- AVR -->
+            <input type="radio" name="Select" id="option4">
+            <label for="option4">AVR</label>
+            <br>
+            <div id="avrOptions" style="display: none; margin-top: 5px;">
+                <h4>AVR Options</h4>
+                <label>Rating of AVR:</label>
+                <input type="text" name="avr_rating" placeholder="Enter rating in kVA">
+                <br>
+                <label>Phase:</label>
+                <select name="avr_phase">
+                    <option value="single">Single Phase</option>
+                    <option value="three">Three Phase</option>
+                </select>
+                <br>
+                <label>Machine Load:</label>
+                <input type="text" name="avr_load" placeholder="Enter load in KW">
+                <br>
+                <label>Usage of AVR:</label>
+                <textarea name="avr_usage" placeholder="Mention usage"></textarea>
+            </div>
+        
+            <!-- Lithium-ion Battery -->
+            <input type="radio" name="Select" id="option5">
+            <label for="option5">Lithium-ion Battery</label>
+            <br>
+            <div id="batteryOptions" style="display: none; margin-top: 5px;">
+                <h4>Lithium-ion Battery Options</h4>
+                <label>Rating:</label>
+                <select name="battery_rating">
+                    <option value="100ah48v">100Ah 48V</option>
+                    <option value="300ah48v">300Ah 48V</option>
+                </select>
+            </div>
+        
+            <!-- Hybrid Inverter -->
+            <input type="radio" name="Select" id="option6">
+            <label for="option6">Hybrid Inverter</label>
+            <br>
+            <div id="hybridInverterOptions" style="display: none; margin-top: 5px;">
+                <h4>Hybrid Inverter Options</h4>
+                <label>Rating of Inverter:</label>
+                <select name="inverter_rating">
+                    <option value="1.2kw">1.2 kW</option>
+                    <option value="4kw">4 kW</option>
+                    <option value="5.5kw">5.5 kW</option>
+                    <option value="6kw">6 kW</option>
+                    <option value="6kw_ip67">6 kW (IP67)</option>
+                </select>
+            </div>
+        
+            <!-- Cable Tray -->
+            <input type="radio" name="Select" id="option7">
+            <label for="option7">Cable Tray</label>
+            <br>
+            <div id="cableTrayOptions" style="display: none; margin-top: 5px;">
+                <h4>Cable Tray Options</h4>
+                <label>Size of Cable Tray (LxB):</label>
+                <input type="text" name="cabletray_size" placeholder="Enter dimensions">
+                <br>
+                <label>Length (in feet):</label>
+                <input type="text" name="cabletray_length" placeholder="Enter length">
+                <br>
+                <label>Type of Cable Tray:</label>
+                <select name="cabletray_type">
+                    <option value="ledderType">Ladder Type</option>
+                    <option value="perforatedType">Perforated Type</option>
+                    <option value="meshType">Mesh Type</option>
+                    <option value="aluminiumType">Aluminium Type</option>
+                </select>
+                <br>
+                <label>With Cover:</label>
+                <select name="cabletray_cover">
+                    <option value="withCover">With Cover</option>
+                    <option value="withoutCover">Without Cover</option>
+                </select>
+                <br>
+                <label>With Powder Coating:</label>
+                <select name="cabletray_coating">
+                    <option value="withCoating">With Powder Coating</option>
+                    <option value="withoutCoating">Without Powder Coating</option>
+                </select>
+            </div>
+        
+            <!-- Switch Gear Panels -->
+            <input type="radio" name="Gear" id="option8">
+            <label for="option8">Switch Gear Panels</label>
+            <br>
+            <div id="switchGearOptions" style="display: none; margin-top: 5px;">
+                <h4>Switch Gear Panel Options</h4>
+                <label>Type of Panel:</label>
+                <select name="panel_type">
+                    <option value="ltPanel">LT Panel</option>
+                    <option value="htPanel">HT Panel</option>
+                    <option value="pccPanel">PCC Panel</option>
+                    <option value="mccPanel">MCC Panel</option>
+                </select>
+                <br>
+                <label>Voltage Rating:</label>
+                <input type="text" name="panel_voltage" placeholder="Enter voltage rating">
+                <br>
+                <label>Current Rating:</label>
+                <input type="text" name="panel_current" placeholder="Enter current rating">
+            </div>
+        </div>
+        
+        
+            <!-- File Upload Option -->
+            <div class="file-upload">
+                <label class="AG">Upload File:</label>
+                <input type="file" name="uploadFile" class="input">
+            </div>
+            
+            <!-- Submit Button -->
+            <button type="submit">Submit</button>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const sections = {
+                    option1: document.getElementById("linearLightsOptions"),
+                    option2: document.getElementById("earthingOptions"),
+                    option3: document.getElementById("upsOptions"),
+                    option4: document.getElementById("avrOptions"),
+                    option5: document.getElementById("batteryOptions"),
+                    option6: document.getElementById("hybridInverterOptions"),
+                    option7: document.getElementById("cableTrayOptions"),
+                    option8: document.getElementById("switchGearOptions"),
+                };
+        
+                document.querySelectorAll('input[name="Select"]').forEach(radio => {
+                    radio.addEventListener("change", function () {
+                        Object.keys(sections).forEach(option => {
+                            sections[option].style.display = radio.id === option ? "block" : "none";
+                        });
+                    });
+                });
+            });
+        </script>
+
+
+
+            
+        
+
+    
+
+
+   </form>
+    
+</body>
+</html>
